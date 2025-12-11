@@ -6,11 +6,11 @@ namespace _Core.Scripts.Objects.Collectable.Bad_Objects
 {
     public class BadObjectTest : MonoBehaviour, ICollectable
     {
-        private Rigidbody2D _rigidbody;
         [SerializeField] private Transform _playerTransform;
         [SerializeField] private float _moveSpeed;
+        private Rigidbody2D _rigidbody;
         private Vector3 _test;
-        private bool isReflected;
+        public bool isReflected { get; private set; }
 
         private void Start()
         {
@@ -18,7 +18,7 @@ namespace _Core.Scripts.Objects.Collectable.Bad_Objects
             _test = (_playerTransform.position - transform.position ).normalized;
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             if (!isReflected)
             {
@@ -29,7 +29,7 @@ namespace _Core.Scripts.Objects.Collectable.Bad_Objects
 
         public void Move()
         {
-            _rigidbody.linearVelocity = _test * (_moveSpeed * Time.deltaTime);
+            _rigidbody.linearVelocity = _test * (_moveSpeed * Time.fixedDeltaTime);
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
@@ -42,6 +42,7 @@ namespace _Core.Scripts.Objects.Collectable.Bad_Objects
             }
         }
         
+       
         
 
     }
