@@ -20,7 +20,6 @@ namespace _Core.Scripts.Objects.Collectable.Bad_Objects
             _playerTransform = FindFirstObjectByType<PlayerStats>().GetComponent<PlayerStats>();
             _objectVelocityDirection = (_playerTransform.transform.position - transform.position ).normalized;
             StartCoroutine(DelayBeforeMove());
-            //Move();
         }
 
 
@@ -31,7 +30,6 @@ namespace _Core.Scripts.Objects.Collectable.Bad_Objects
 
         private IEnumerator DelayBeforeMove()
         {
-            
             yield return new WaitForSeconds(_delayBeforeMove);
             Move();
         }

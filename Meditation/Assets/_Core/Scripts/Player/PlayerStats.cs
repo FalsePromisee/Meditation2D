@@ -34,14 +34,5 @@ namespace _Core.Scripts.Player
                 Debug.Log("Player dead");
             }
         }
-
-        public void Heal()
-        {
-            _currentHealth ++;
-            if (_currentHealth > _maxHealth)
-            {
-                _currentHealth = _maxHealth;
-            }
-        }
     }
 }
