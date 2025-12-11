@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using _Core.Scripts.Player;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ namespace _Core.Scripts.Objects.Collectable.Bad_Objects
     {
         
         [SerializeField] private float _moveSpeed;
+        private int _delayBeforeMove = 2;
         private PlayerStats _playerTransform;
         private Rigidbody2D _rigidbody;
         private Vector3 _objectVelocityDirection;
@@ -17,7 +19,8 @@ namespace _Core.Scripts.Objects.Collectable.Bad_Objects
             _rigidbody = GetComponent<Rigidbody2D>();
             _playerTransform = FindFirstObjectByType<PlayerStats>().GetComponent<PlayerStats>();
             _objectVelocityDirection = (_playerTransform.transform.position - transform.position ).normalized;
-            Move();
+            StartCoroutine(DelayBeforeMove());
+            //Move();
         }
 
 
@@ -26,7 +29,12 @@ namespace _Core.Scripts.Objects.Collectable.Bad_Objects
             _rigidbody.linearVelocity = _objectVelocityDirection * _moveSpeed;
         }
 
-       
+        private IEnumerator DelayBeforeMove()
+        {
+            
+            yield return new WaitForSeconds(_delayBeforeMove);
+            Move();
+        }
         
 
     }
