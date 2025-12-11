@@ -1,4 +1,5 @@
 using System;
+using _Core.Scripts.Objects.Collectable.Bad_Objects;
 using UnityEngine;
 
 namespace _Core.Scripts.Player
@@ -13,8 +14,18 @@ namespace _Core.Scripts.Player
             _currentHealth = _maxHealth;
         }
 
-        
-        
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.GetComponent<BadObjectTest>())
+            {
+                TakeDamage();
+                Debug.Log("Hit");
+                Destroy(other.gameObject);
+            }
+        }
+
+
         public void TakeDamage()
         {
             _currentHealth --;

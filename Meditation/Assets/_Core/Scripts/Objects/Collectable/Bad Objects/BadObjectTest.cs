@@ -4,44 +4,28 @@ using UnityEngine;
 
 namespace _Core.Scripts.Objects.Collectable.Bad_Objects
 {
-    public class BadObjectTest : MonoBehaviour, ICollectable
+    public class BadObjectTest : MonoBehaviour
     {
-        [SerializeField] private Transform _playerTransform;
+        
         [SerializeField] private float _moveSpeed;
+        private PlayerStats _playerTransform;
         private Rigidbody2D _rigidbody;
-        private Vector3 _test;
-        public bool isReflected { get; private set; }
+        private Vector3 _objectVelocityDirection;
 
         private void Start()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
-            _test = (_playerTransform.position - transform.position ).normalized;
+            _playerTransform = FindFirstObjectByType<PlayerStats>().GetComponent<PlayerStats>();
+            _objectVelocityDirection = (_playerTransform.transform.position - transform.position ).normalized;
+            Move();
         }
 
-        private void FixedUpdate()
-        {
-            if (!isReflected)
-            {
-                Move();
-            }
-
-        }
 
         public void Move()
         {
-            _rigidbody.linearVelocity = _test * (_moveSpeed * Time.fixedDeltaTime);
+            _rigidbody.linearVelocity = _objectVelocityDirection * _moveSpeed;
         }
 
-        private void OnTriggerEnter2D(Collider2D collision)
-        {
-            if (collision.GetComponent<PlayerStats>())
-            {
-                EventManager.OnPlayerTakeDamage();
-                Debug.Log("Took Damage");
-                Destroy(gameObject);
-            }
-        }
-        
        
         
 
