@@ -26,9 +26,10 @@ namespace _Core.Scripts.Player
         }
 
 
-        public void TakeDamage()
+        private void TakeDamage()
         {
             _currentHealth --;
+            Debug.Log("Health left" + _currentHealth);
             if (_currentHealth <= 0)
             {
                 Debug.Log("Player dead");
