@@ -13,8 +13,8 @@ public class Spawner : MonoBehaviour
 
     private void Start()
     {
-        //StartCoroutine(SpawnObjects());
-        StartCoroutine(SpawnGoodObjects());
+        StartCoroutine(SpawnObjects());
+        //StartCoroutine(SpawnGoodObjects());
     }
 
     private IEnumerator SpawnObjects()
