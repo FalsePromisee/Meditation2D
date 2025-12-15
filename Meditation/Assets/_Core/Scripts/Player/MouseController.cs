@@ -1,4 +1,5 @@
 using System;
+using _Core.Scripts.Interfaces;
 using UnityEngine;
 
 namespace _Core.Scripts.Player
@@ -6,8 +7,8 @@ namespace _Core.Scripts.Player
     public class MouseController : MonoBehaviour
     {
         [SerializeField] private float _mouseMinVelocity = 0.2f;
-        public Vector3 _mouseDirection{get; private set;}
-        private Vector3 newMousePosition;
+        public Vector3 mouseDirection{get; private set;}
+        private Vector3 _newMousePosition;
         
         private Camera _camera;
         private CircleCollider2D _mouseCollider;
@@ -37,8 +38,8 @@ namespace _Core.Scripts.Player
 
         private void StartReflectObjects()
         {
-            newMousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
-            newMousePosition.z = 0;
+            _newMousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
+            _newMousePosition.z = 0;
             
             _isMousePressed = true;
             _mouseCollider.enabled = true;
@@ -52,13 +53,24 @@ namespace _Core.Scripts.Player
 
         private void ContinueReflectingObjects()
         {
-            newMousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
-            newMousePosition.z = 0;
-            _mouseDirection = newMousePosition - transform.position;
-            float velocity = _mouseDirection.magnitude / Time.deltaTime;
+            _newMousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
+            _newMousePosition.z = 0;
+            mouseDirection = _newMousePosition - transform.position;
+            var velocity = mouseDirection.magnitude / Time.deltaTime;
             _mouseCollider.enabled = velocity > _mouseMinVelocity;
             
-            transform.position = newMousePosition;
+            transform.position = _newMousePosition;
+        }
+
+       
+
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            if (other.gameObject.GetComponent<IBadThoughts>() != null && _isMousePressed)
+            {
+                Destroy(other.gameObject);
+            }
+
         }
 
         private void OnEnable()

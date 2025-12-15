@@ -17,7 +17,7 @@ namespace _Core.Scripts.Player
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.GetComponent<BadObjectTest>())
+            if (other.GetComponent<BadThoughts>())
             {
                 TakeDamage();
                 Debug.Log("Hit");
