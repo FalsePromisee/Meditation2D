@@ -6,7 +6,7 @@ namespace _Core.Scripts.Player
 {
     public class MouseController : MonoBehaviour
     {
-        [SerializeField] private float _mouseMinVelocity = 0.2f;
+        [SerializeField] private float _mouseMinVelocity = 0.1f;
         public Vector3 mouseDirection{get; private set;}
         private Vector3 _newMousePosition;
         
@@ -63,14 +63,14 @@ namespace _Core.Scripts.Player
         }
 
        
-
-        private void OnCollisionEnter2D(Collision2D other)
+        
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (other.gameObject.GetComponent<IBadThoughts>() != null && _isMousePressed)
+            if (collision.gameObject.GetComponent<IBadThoughts>() != null && _isMousePressed)
             {
-                Destroy(other.gameObject);
+                IBadThoughts badThoughts = collision.gameObject.GetComponent<IBadThoughts>();
+                badThoughts.TakeDamage();
             }
-
         }
 
         private void OnEnable()

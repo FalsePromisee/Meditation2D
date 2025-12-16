@@ -1,7 +1,6 @@
-using System;
-using System.Collections;
 using _Core.Scripts.Interfaces;
 using _Core.Scripts.Player;
+using _Core.Scripts;
 using UnityEngine;
 
 namespace _Core.Scripts.Objects.Collectable.Bad_Objects
@@ -10,6 +9,7 @@ namespace _Core.Scripts.Objects.Collectable.Bad_Objects
     {
         
         [SerializeField] private float _moveSpeed;
+        private int _currentHealth = 10;
         private PlayerStats _playerTransform;
         private Rigidbody2D _rigidbody;
         private Vector3 _objectVelocityDirection;
@@ -22,23 +22,20 @@ namespace _Core.Scripts.Objects.Collectable.Bad_Objects
             Move();
         }
 
-        private void OnTriggerEnter2D(Collider2D collision)
-        {
-            if (collision.gameObject.CompareTag("Player"))
-            {
-                DealDamage();
-            }
-        }
+        
         
         public void Move()
         {
             _rigidbody.linearVelocity = _objectVelocityDirection * _moveSpeed;
         }
 
-
-        public void DealDamage()
+        public void TakeDamage()
         {
-            Debug.Log("Dealing damage");
+            _currentHealth--;
+            if (_currentHealth <= 0)
+            {
+                Destroy(this.gameObject);
+            }
         }
     }
 }
