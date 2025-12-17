@@ -10,7 +10,7 @@ namespace _Core.Scripts
         public static event Action OnPlayerDied;
         public static event Action OnPlayerHealed;
 
-        public static event Action OnBadThoughtKilled;
+        public static event Action<int> OnBadThoughtKilled;
 
         private void Awake()
         {
@@ -32,9 +32,9 @@ namespace _Core.Scripts
             OnPlayerHealed?.Invoke();
         }
         
-        public void OnBadThoughtKill()
+        public void OnBadThoughtKill(int pointsAmount)
         {
-            OnBadThoughtKilled?.Invoke();
+            OnBadThoughtKilled?.Invoke(pointsAmount);
         }
     }
 }

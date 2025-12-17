@@ -3550,6 +3550,7 @@ GameObject:
   - component: {fileID: 869281499}
   - component: {fileID: 869281498}
   - component: {fileID: 869281497}
+  - component: {fileID: 869281501}
   m_Layer: 5
   m_Name: UI Canvas
   m_TagString: Untagged
@@ -3640,6 +3641,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &869281501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 869281496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3ebe6e784d614e3095c13a9563c9a93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI
+  _scoreText: {fileID: 1033393498}
 --- !u!1 &874674845
 GameObject:
   m_ObjectHideFlags: 0
@@ -3925,7 +3939,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Score: '
+  m_text: 'Score: 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5ae211f4071a74dc688463e445edceef, type: 2}
   m_sharedMaterial: {fileID: 5365900542065824911, guid: 5ae211f4071a74dc688463e445edceef, type: 2}
@@ -5228,7 +5242,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 57ffc9bf17c2b433386f92a0bb63e740, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5799,8 +5813,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Offset: {x: 0, y: -0.018261552}
+  m_Radius: 0.97845304
 --- !u!4 &2048804918
 Transform:
   m_ObjectHideFlags: 0
