@@ -6,29 +6,18 @@ namespace _Core.Scripts.Player
 {
     public class PlayerStats : MonoBehaviour
     {
-        private int _maxHealth = 5;
+        private int _maxHealth = 10;
         public int _currentHealth { get; private set; }
 
         private void Awake()
         {
             _currentHealth = _maxHealth;
         }
+        
 
-
-        private void OnTriggerEnter2D(Collider2D other)
+        public void TakeDamage(int damageAmount)
         {
-            if (other.GetComponent<BadThoughts>())
-            {
-                TakeDamage();
-                Debug.Log("Hit");
-                Destroy(other.gameObject);
-            }
-        }
-
-
-        private void TakeDamage()
-        {
-            _currentHealth --;
+            _currentHealth =- damageAmount;
             Debug.Log("Health left" + _currentHealth);
             if (_currentHealth <= 0)
             {

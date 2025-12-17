@@ -7,26 +7,38 @@ namespace _Core.Scripts.Objects.Collectable.Bad_Objects
 {
     public class BadThoughts : MonoBehaviour, IMovable, IBadThoughts
     {
+        [SerializeField] private BadThougthsScriptableObject badThoughtsData;
         
-        [SerializeField] private float _moveSpeed;
-        private int _currentHealth = 10;
         private PlayerStats _playerTransform;
         private Rigidbody2D _rigidbody;
         private Vector3 _objectVelocityDirection;
 
+        private int _currentHealth;
+        
         private void Start()
         {
+            _currentHealth = badThoughtsData.health;
             _rigidbody = GetComponent<Rigidbody2D>();
             _playerTransform = FindFirstObjectByType<PlayerStats>().GetComponent<PlayerStats>();
             _objectVelocityDirection = (_playerTransform.transform.position - transform.position ).normalized;
             Move();
         }
 
-        
-        
-        public void Move()
+        private void OnTriggerEnter2D(Collider2D other)
         {
-            _rigidbody.linearVelocity = _objectVelocityDirection * _moveSpeed;
+            if (other.GetComponent<PlayerStats>())
+            {
+                PlayerStats playerStats = other.GetComponent<PlayerStats>();
+                playerStats.TakeDamage(badThoughtsData.damageAmount);
+                Debug.Log("Dealing damage: " + badThoughtsData.damageAmount);
+                Destroy(gameObject);
+            }
+        }
+        
+        
+        public void Move()  //giving object direction and velocity to move
+        {
+            _rigidbody.linearVelocity = _objectVelocityDirection * badThoughtsData.speed;
         }
 
         public void TakeDamage()

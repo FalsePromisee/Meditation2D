@@ -93,8 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0501be46565e41e0bc160a2fcdbba422, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_Core.Scripts.Objects.Collectable.Bad_Objects.BadObjectTest
-  _playerTransform: {fileID: 0}
-  _moveSpeed: 1
+  badThoughtsData: {fileID: 11400000, guid: ad9bf5afaeb8b48e184f40368f68ba1e, type: 2}
 --- !u!50 &5419582604277038640
 Rigidbody2D:
   serializedVersion: 5
