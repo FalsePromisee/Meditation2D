@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 066b4a700fd3540a4be139a99c045cb5, type: 3}
   m_Name: FastBadThoughtsData
   m_EditorClassIdentifier: Assembly-CSharp::BadThougthsScriptableObject
-  speed: 4
+  speed: 2
   health: 1
   damageAmount: 1
+  pointsAmount: 1

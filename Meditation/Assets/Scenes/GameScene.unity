@@ -3211,6 +3211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Spawner
   _badObjects:
   - {fileID: 757260217853424277, guid: 6c1fad8c4be254a2889c91175744b8d9, type: 3}
+  - {fileID: 4380651604595031899, guid: 7fe9a4f3a9c3c4b80972bfeac4ded977, type: 3}
   _goodObjects: []
 --- !u!61 &498734071
 BoxCollider2D:
@@ -3914,9 +3915,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 869281500}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -530, y: 311}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 256, y: -150}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1033393498
@@ -3966,8 +3967,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25
-  m_fontSizeBase: 25
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
