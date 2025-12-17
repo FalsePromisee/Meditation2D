@@ -47,6 +47,7 @@ namespace _Core.Scripts.Objects.Collectable.Bad_Objects
             if (_currentHealth <= 0)
             {
                 Destroy(this.gameObject);
+                EventManager.Instance.OnBadThoughtKill();
             }
         }
     }

@@ -17,22 +17,22 @@ namespace _Core.Scripts
             Instance = this;
         }
         
-        public static void OnPlayerTakeDamage()
+        public void OnPlayerTakeDamage()
         {
             OnPlayerTookDamage?.Invoke();
         }
 
-        public static void OnPlayerDeath()
+        public void OnPlayerDeath()
         {
             OnPlayerDied?.Invoke();
         }
 
-        public static void OnPlayerHeal()
+        public void OnPlayerHeal()
         {
             OnPlayerHealed?.Invoke();
         }
         
-        public static void OnBadThoughtKill()
+        public void OnBadThoughtKill()
         {
             OnBadThoughtKilled?.Invoke();
         }

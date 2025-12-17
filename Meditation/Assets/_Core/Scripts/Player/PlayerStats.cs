@@ -22,6 +22,7 @@ namespace _Core.Scripts.Player
             if (_currentHealth <= 0)
             {
                 Debug.Log("Player dead");
+                EventManager.Instance.OnPlayerDeath();
             }
         }
     }

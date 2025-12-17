@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 066b4a700fd3540a4be139a99c045cb5, type: 3}
-  m_Name: BaseBadThoughtsData
+  m_Name: FastBadThoughtsData
   m_EditorClassIdentifier: Assembly-CSharp::BadThougthsScriptableObject
-  speed: 1
-  health: 5
-  damageAmount: 2
+  speed: 4
+  health: 1
+  damageAmount: 1
