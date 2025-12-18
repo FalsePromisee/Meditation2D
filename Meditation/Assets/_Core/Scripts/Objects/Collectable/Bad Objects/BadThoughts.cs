@@ -30,7 +30,6 @@ namespace _Core.Scripts.Objects.Collectable.Bad_Objects
             {
                 PlayerStats playerStats = other.GetComponent<PlayerStats>();
                 playerStats.TakeDamage(badThoughtsData.damageAmount);
-                Debug.Log("Dealing damage: " + badThoughtsData.damageAmount);
                 Destroy(gameObject);
             }
         }

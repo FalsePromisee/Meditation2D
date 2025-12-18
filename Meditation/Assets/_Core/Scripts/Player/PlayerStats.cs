@@ -18,6 +18,7 @@ namespace _Core.Scripts.Player
         public void TakeDamage(int damageAmount)
         {
             _currentHealth =- damageAmount;
+            EventManager.Instance.OnPlayerTakeDamage(damageAmount);
             Debug.Log("Health left" + _currentHealth);
             if (_currentHealth <= 0)
             {

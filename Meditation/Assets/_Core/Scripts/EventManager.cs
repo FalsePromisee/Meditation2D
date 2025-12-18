@@ -6,7 +6,7 @@ namespace _Core.Scripts
     public class EventManager : MonoBehaviour
     {
         public static EventManager Instance;
-        public static event Action OnPlayerTookDamage;
+        public static event Action<int> OnPlayerTookDamage;
         public static event Action OnPlayerDied;
         public static event Action OnPlayerHealed;
 
@@ -17,9 +17,9 @@ namespace _Core.Scripts
             Instance = this;
         }
         
-        public void OnPlayerTakeDamage()
+        public void OnPlayerTakeDamage(int damage)
         {
-            OnPlayerTookDamage?.Invoke();
+            OnPlayerTookDamage?.Invoke(damage);
         }
 
         public void OnPlayerDeath()
