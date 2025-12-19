@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9158414484693016316}
   - component: {fileID: 2235569018051689515}
   - component: {fileID: 5850882916328221543}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GoodOjbect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7077285024461676553}
   - component: {fileID: 1965448741231698147}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}

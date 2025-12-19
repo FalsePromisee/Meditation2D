@@ -17,26 +17,27 @@ public class UI : MonoBehaviour
         _healthText.text = "Health: " + _health;
     }
 
-    private void OnEnable()
+    
+    private void OnEnable() // subscribing and unsubscribing on events
     {
         EventManager.OnBadThoughtKilled += BadThoughtKill;
         EventManager.OnPlayerTookDamage += PlayerTookDamage;
     }
-
-    private void PlayerTookDamage(int damageAmount)
-    {
-        _health -= damageAmount;
-        _healthText.text = "Health: " + _health;
-    }
-
     private void OnDisable()
     {
         EventManager.OnBadThoughtKilled -= BadThoughtKill;
+        EventManager.OnPlayerTookDamage -= PlayerTookDamage;
     }
 
+    //event's methods
     private void BadThoughtKill(int pointsAmount)
     {
         _score += pointsAmount;
         _scoreText.text = "Score: " + _score;
+    }
+    private void PlayerTookDamage(int damageAmount)
+    {
+        _health -= damageAmount;
+        _healthText.text = "Health: " + _health;
     }
 }

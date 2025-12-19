@@ -22,6 +22,11 @@ namespace _Core.Scripts.Player
         }
         private void Update()
         {
+            InputHandler();
+        }
+
+        private void InputHandler()
+        {
             if (Input.GetMouseButton(0))
             {
                 StartReflectObjects();
@@ -36,7 +41,7 @@ namespace _Core.Scripts.Player
             }
         }
 
-        private void StartReflectObjects()
+        private void StartReflectObjects() // player press button
         {
             _newMousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
             _newMousePosition.z = 0;
@@ -45,13 +50,13 @@ namespace _Core.Scripts.Player
             _mouseCollider.enabled = true;
         }
 
-        private void StopReflectObjects()
+        private void StopReflectObjects() // player release button
         {
             _isMousePressed = false;
             _mouseCollider.enabled = false;
         }
 
-        private void ContinueReflectingObjects()
+        private void ContinueReflectingObjects() // player pressed and holding button
         {
             _newMousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
             _newMousePosition.z = 0;
@@ -63,7 +68,7 @@ namespace _Core.Scripts.Player
         }
 
        
-        
+        //checking if mouse is touching bad thought's objects
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.gameObject.GetComponent<IBadThoughts>() != null && _isMousePressed)
@@ -73,7 +78,7 @@ namespace _Core.Scripts.Player
             }
         }
 
-        private void OnEnable()
+        private void OnEnable() //refresh mouse before start
         {
             StopReflectObjects();
         }
