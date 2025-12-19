@@ -1,4 +1,3 @@
-using _Core.Scripts.Enum;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "BadThoughtsData", menuName = "ScriptableObjects/BadThoughts")]
@@ -8,5 +7,4 @@ public class BadThougthsScriptableObject : ScriptableObject
     public int health;
     public int damageAmount;
     public int pointsAmount;
-    public ThoughtType  thoughtType;
 }

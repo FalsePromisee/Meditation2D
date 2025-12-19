@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 57ffc9bf17c2b433386f92a0bb63e740
+guid: 3557425cb193c744eb925a4caad7dcb7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4750530540910553180
-    second: 2dMedetation_0
+      213: -6597379510548313757
+    second: photo_2025-12-19_21-40-26_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -56,7 +56,7 @@ TextureImporter:
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: 0
+  spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -110,7 +110,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: iOS
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -126,7 +126,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 2dMedetation_0
+      name: photo_2025-12-19_21-40-26_0
       rect:
         serializedVersion: 2
         x: 0
@@ -134,40 +134,34 @@ TextureImporter:
         width: 560
         height: 792
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c582e998b564de140800000000000000
-      internalID: 4750530540910553180
+      spriteID: 369c3512a466174a0800000000000000
+      internalID: -6597379510548313757
       vertices: []
       indices: 
       edges: []
       weights: []
-    outline:
-    - - {x: 280, y: 396}
-      - {x: -280, y: 396}
-      - {x: -280, y: -396}
-      - {x: 280, y: -396}
+    outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    spriteID: 
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      2dMedetation_0: 4750530540910553180
+      photo_2025-12-19_21-40-26_0: -6597379510548313757
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
