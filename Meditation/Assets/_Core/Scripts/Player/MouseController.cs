@@ -1,5 +1,6 @@
 using System;
 using _Core.Scripts.Interfaces;
+using _Core.Scripts.Managers;
 using UnityEngine;
 
 namespace _Core.Scripts.Player
@@ -15,6 +16,7 @@ namespace _Core.Scripts.Player
         private CircleCollider2D _mouseCollider;
         
         private bool _isMousePressed;
+        private bool _isGamePaused = false;
 
         private void Awake()
         {
@@ -24,7 +26,10 @@ namespace _Core.Scripts.Player
         }
         private void Update()
         {
-            InputHandler();
+            if (!_isGamePaused)
+            {
+                InputHandler();
+            }
         }
 
         private void InputHandler()
@@ -85,6 +90,18 @@ namespace _Core.Scripts.Player
         private void OnEnable() //refresh mouse before start
         {
             StopReflectObjects();
+            EventManager.OnGamePaused += GamePause;
+            EventManager.OnGameUnpaused += GameUnpause;
+        }
+
+        private void GameUnpause()
+        {
+            _isGamePaused = false;
+        }
+
+        private void GamePause()
+        {
+            _isGamePaused = true;
         }
 
         private void OnDisable()

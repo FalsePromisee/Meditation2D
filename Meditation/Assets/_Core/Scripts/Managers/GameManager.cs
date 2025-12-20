@@ -20,6 +20,7 @@ namespace _Core.Scripts.Managers
         {
             _pauseMenu.SetActive(true);
             _pauseButton.SetActive(false);
+            EventManager.Instance.OnGamePause();
             Time.timeScale = 0;
         }
 
@@ -27,6 +28,7 @@ namespace _Core.Scripts.Managers
         {
             _pauseMenu.SetActive(false);
             _pauseButton.SetActive(true);
+            EventManager.Instance.OnGameUnpause();
             Time.timeScale = 1;
         }
         
