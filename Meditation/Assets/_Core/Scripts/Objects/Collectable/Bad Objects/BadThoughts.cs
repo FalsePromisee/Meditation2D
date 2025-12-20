@@ -1,5 +1,6 @@
 using _Core.Scripts.Interfaces;
 using _Core.Scripts.Player;
+using _Core.Scripts.Managers;
 using UnityEngine;
 
 namespace _Core.Scripts.Objects.Collectable.Bad_Objects

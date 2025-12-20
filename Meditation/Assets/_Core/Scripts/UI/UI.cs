@@ -1,5 +1,4 @@
-using System;
-using _Core.Scripts;
+using _Core.Scripts.Managers;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;

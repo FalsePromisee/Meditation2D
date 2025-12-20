@@ -13,8 +13,8 @@ namespace _Core.Scripts.Objects.Collectable.GoodObjects
         private void Start()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
-            int randomValue = Random.Range(0, _objectVelocityDirection.Length);
             _objectVelocityDirection = FindObjectsByType<TestDirectionObjects>(FindObjectsSortMode.None);
+            int randomValue = Random.Range(0, _objectVelocityDirection.Length);
             _objectDirection = (_objectVelocityDirection[randomValue].transform.position - transform.position).normalized;
             Move();
         }

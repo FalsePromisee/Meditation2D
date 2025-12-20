@@ -1,14 +1,13 @@
 using System;
 using UnityEngine;
 
-namespace _Core.Scripts
+namespace _Core.Scripts.Managers
 {
     public class EventManager : MonoBehaviour
     {
         public static EventManager Instance;
         public static event Action<int> OnPlayerTookDamage;
         public static event Action OnPlayerDied;
-        public static event Action OnPlayerHealed;
 
         public static event Action<int> OnBadThoughtKilled;
 
@@ -25,11 +24,6 @@ namespace _Core.Scripts
         public void OnPlayerDeath()
         {
             OnPlayerDied?.Invoke();
-        }
-
-        public void OnPlayerHeal()
-        {
-            OnPlayerHealed?.Invoke();
         }
         
         public void OnBadThoughtKill(int pointsAmount)

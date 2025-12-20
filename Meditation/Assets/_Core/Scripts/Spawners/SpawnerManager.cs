@@ -1,6 +1,6 @@
 using System.Collections;
+using _Core.Scripts.Managers;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace _Core.Scripts.Spawners
 {
@@ -8,6 +8,7 @@ namespace _Core.Scripts.Spawners
     {
         [SerializeField] private SpawnerBadObjects[] badSpawners;
         [SerializeField] private SpawnerGoodObjects[] goodSpawners;
+        
 
         private float _minDelayBadObjects = 1.5f;
         private float _maxDelayBadObjects = 3;

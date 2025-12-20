@@ -1,5 +1,6 @@
 using System;
 using _Core.Scripts.Objects.Collectable.Bad_Objects;
+using _Core.Scripts.Managers;
 using UnityEngine;
 
 namespace _Core.Scripts.Player
@@ -22,7 +23,6 @@ namespace _Core.Scripts.Player
             Debug.Log("Health left" + _currentHealth);
             if (_currentHealth <= 0)
             {
-                Debug.Log("Player dead");
                 EventManager.Instance.OnPlayerDeath();
             }
         }
