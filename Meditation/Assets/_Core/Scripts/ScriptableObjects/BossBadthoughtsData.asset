@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: BossBadthoughtsData
   m_EditorClassIdentifier: Assembly-CSharp::BadThougthsScriptableObject
   speed: 0.5
-  health: 25
+  health: 20
   damageAmount: 4
   pointsAmount: 25
