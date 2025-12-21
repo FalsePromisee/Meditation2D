@@ -650,7 +650,7 @@ MonoBehaviour:
   _badObjects:
   - {fileID: 757260217853424277, guid: 6c1fad8c4be254a2889c91175744b8d9, type: 3}
   - {fileID: 4380651604595031899, guid: 7fe9a4f3a9c3c4b80972bfeac4ded977, type: 3}
-  _badBossThought: {fileID: 3962710682065006897, guid: 144e5ab3f0e3640359494d182e7b7ac2, type: 3}
+  _badBossThought: {fileID: 2680417525637081045, guid: 831d3a9ee1d6e405b94c2c3200013d7c, type: 3}
 --- !u!61 &275076220
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -859,7 +859,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 24d73a68c229a491d8349cdde65182b4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6074,7 +6074,7 @@ MonoBehaviour:
   _badObjects:
   - {fileID: 757260217853424277, guid: 6c1fad8c4be254a2889c91175744b8d9, type: 3}
   - {fileID: 4380651604595031899, guid: 7fe9a4f3a9c3c4b80972bfeac4ded977, type: 3}
-  _badBossThought: {fileID: 3962710682065006897, guid: 144e5ab3f0e3640359494d182e7b7ac2, type: 3}
+  _badBossThought: {fileID: 2680417525637081045, guid: 831d3a9ee1d6e405b94c2c3200013d7c, type: 3}
 --- !u!61 &1277680855
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6834,7 +6834,7 @@ MonoBehaviour:
   _badObjects:
   - {fileID: 757260217853424277, guid: 6c1fad8c4be254a2889c91175744b8d9, type: 3}
   - {fileID: 4380651604595031899, guid: 7fe9a4f3a9c3c4b80972bfeac4ded977, type: 3}
-  _badBossThought: {fileID: 3962710682065006897, guid: 144e5ab3f0e3640359494d182e7b7ac2, type: 3}
+  _badBossThought: {fileID: 2680417525637081045, guid: 831d3a9ee1d6e405b94c2c3200013d7c, type: 3}
 --- !u!61 &1865539504
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6989,7 +6989,7 @@ MonoBehaviour:
   _badObjects:
   - {fileID: 757260217853424277, guid: 6c1fad8c4be254a2889c91175744b8d9, type: 3}
   - {fileID: 4380651604595031899, guid: 7fe9a4f3a9c3c4b80972bfeac4ded977, type: 3}
-  _badBossThought: {fileID: 3962710682065006897, guid: 144e5ab3f0e3640359494d182e7b7ac2, type: 3}
+  _badBossThought: {fileID: 2680417525637081045, guid: 831d3a9ee1d6e405b94c2c3200013d7c, type: 3}
 --- !u!61 &1873670793
 BoxCollider2D:
   m_ObjectHideFlags: 0
