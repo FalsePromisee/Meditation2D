@@ -647,8 +647,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawner
   _badObjects:
-  - {fileID: 757260217853424277, guid: 6c1fad8c4be254a2889c91175744b8d9, type: 3}
-  - {fileID: 4380651604595031899, guid: 7fe9a4f3a9c3c4b80972bfeac4ded977, type: 3}
+  - {fileID: 7541184551669338538, guid: 0f1bf9e648834c44b8b35cdf37fc2ec5, type: 3}
+  - {fileID: 4302765219882904887, guid: e80332260dec87c4284414f28b530ca3, type: 3}
   _badBossThought: {fileID: 2680417525637081045, guid: 831d3a9ee1d6e405b94c2c3200013d7c, type: 3}
 --- !u!61 &275076220
 BoxCollider2D:
@@ -4932,97 +4932,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1110822050}
   m_CullTransparentMesh: 1
---- !u!1 &1116450982
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1116450984}
-  - component: {fileID: 1116450983}
-  m_Layer: 0
-  m_Name: Icon_Pause
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!212 &1116450983
-SpriteRenderer:
-  serializedVersion: 2
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1116450982}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: f7531c55aa5e400418161d9ec43b80fc, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 2.5, y: 2.5}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_SpriteSortPoint: 0
---- !u!4 &1116450984
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1116450982}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1189736805
 GameObject:
   m_ObjectHideFlags: 0
@@ -5887,8 +5796,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawner
   _badObjects:
-  - {fileID: 757260217853424277, guid: 6c1fad8c4be254a2889c91175744b8d9, type: 3}
-  - {fileID: 4380651604595031899, guid: 7fe9a4f3a9c3c4b80972bfeac4ded977, type: 3}
+  - {fileID: 7541184551669338538, guid: 0f1bf9e648834c44b8b35cdf37fc2ec5, type: 3}
+  - {fileID: 4302765219882904887, guid: e80332260dec87c4284414f28b530ca3, type: 3}
   _badBossThought: {fileID: 2680417525637081045, guid: 831d3a9ee1d6e405b94c2c3200013d7c, type: 3}
 --- !u!61 &1277680855
 BoxCollider2D:
@@ -6368,7 +6277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 311d680b6767c47a1bf6ae9808c1242b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnerGoodObjects
-  _goodObject: {fileID: 3253402406477521992, guid: 6933c388e17b94d38bb8a37ebdfad81c, type: 3}
+  _goodObject: {fileID: 4269918322639511253, guid: c5c8df88cff28b6499867725990abe5c, type: 3}
 --- !u!61 &1707813464
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6647,8 +6556,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawner
   _badObjects:
-  - {fileID: 757260217853424277, guid: 6c1fad8c4be254a2889c91175744b8d9, type: 3}
-  - {fileID: 4380651604595031899, guid: 7fe9a4f3a9c3c4b80972bfeac4ded977, type: 3}
+  - {fileID: 7541184551669338538, guid: 0f1bf9e648834c44b8b35cdf37fc2ec5, type: 3}
+  - {fileID: 4302765219882904887, guid: e80332260dec87c4284414f28b530ca3, type: 3}
   _badBossThought: {fileID: 2680417525637081045, guid: 831d3a9ee1d6e405b94c2c3200013d7c, type: 3}
 --- !u!61 &1865539504
 BoxCollider2D:
@@ -6802,8 +6711,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawner
   _badObjects:
-  - {fileID: 757260217853424277, guid: 6c1fad8c4be254a2889c91175744b8d9, type: 3}
-  - {fileID: 4380651604595031899, guid: 7fe9a4f3a9c3c4b80972bfeac4ded977, type: 3}
+  - {fileID: 7541184551669338538, guid: 0f1bf9e648834c44b8b35cdf37fc2ec5, type: 3}
+  - {fileID: 4302765219882904887, guid: e80332260dec87c4284414f28b530ca3, type: 3}
   _badBossThought: {fileID: 2680417525637081045, guid: 831d3a9ee1d6e405b94c2c3200013d7c, type: 3}
 --- !u!61 &1873670793
 BoxCollider2D:
@@ -11971,7 +11880,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 311d680b6767c47a1bf6ae9808c1242b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnerGoodObjects
-  _goodObject: {fileID: 3253402406477521992, guid: 6933c388e17b94d38bb8a37ebdfad81c, type: 3}
+  _goodObject: {fileID: 4269918322639511253, guid: c5c8df88cff28b6499867725990abe5c, type: 3}
 --- !u!61 &2112432301
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12206,4 +12115,3 @@ SceneRoots:
   - {fileID: 1639607483}
   - {fileID: 869281500}
   - {fileID: 928968740}
-  - {fileID: 1116450984}

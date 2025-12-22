@@ -1,4 +1,3 @@
-using _Core.Scripts.Objects.Dirrection_for_good_objects;
 using UnityEngine;
 
 namespace _Core.Scripts.Objects.Collectable.GoodObjects
@@ -6,8 +5,9 @@ namespace _Core.Scripts.Objects.Collectable.GoodObjects
     public class GoodObjectTest : MonoBehaviour
     {
         [SerializeField] private float _moveSpeed;
+
         private Rigidbody2D _rigidbody;
-        [SerializeField] private TestDirectionObjects[] _objectVelocityDirection;
+        private TestDirectionObjects[] _objectVelocityDirection;
         private Vector3 _objectDirection;
 
         private void Start()
