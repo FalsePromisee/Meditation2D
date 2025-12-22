@@ -1,5 +1,4 @@
 using System.Collections;
-using _Core.Scripts.Managers;
 using UnityEngine;
 
 namespace _Core.Scripts.Spawners

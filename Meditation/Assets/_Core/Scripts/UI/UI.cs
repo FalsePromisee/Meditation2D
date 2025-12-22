@@ -1,7 +1,6 @@
 using _Core.Scripts.Managers;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class UI : MonoBehaviour
 {

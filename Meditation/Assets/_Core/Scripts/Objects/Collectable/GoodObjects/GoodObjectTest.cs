@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using _Core.Scripts.Interfaces;
 using Random = UnityEngine.Random;
