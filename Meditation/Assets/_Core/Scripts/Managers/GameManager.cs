@@ -39,7 +39,7 @@ namespace _Core.Scripts.Managers
 
         private void PlayerDead()
         {
-            Debug.Log("Player Dead");
+            Debug.Log("Player Dead (game manager log)");
         }
     }
 }
