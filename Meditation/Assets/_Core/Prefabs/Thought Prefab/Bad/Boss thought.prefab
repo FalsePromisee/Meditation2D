@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1977124450846936642}
   - component: {fileID: 2226551527832461670}
   - component: {fileID: 4622104550337318721}
+  - component: {fileID: -1015562772136024864}
   m_Layer: 6
   m_Name: Boss thought
   m_TagString: Untagged
@@ -112,6 +113,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-1015562772136024864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2680417525637081045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db7dda78cd5ed2f479ad736e13e83cb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BadTextBoss
+  _BossText: {fileID: 5501742967225310792}
 --- !u!1 &2852217502223663119
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,8 +160,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.08}
-  m_SizeDelta: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0.0355, y: 0.0209}
+  m_SizeDelta: {x: 1.5914, y: 0.8817}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &5236848893216900609
 MeshRenderer:
@@ -245,8 +259,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 5
-  m_fontSizeBase: 5
+  m_fontSize: 3
+  m_fontSizeBase: 3
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -262,7 +276,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_TextWrappingMode: 0
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}

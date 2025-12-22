@@ -1,16 +1,30 @@
+using TMPro;
 using UnityEngine;
 
 public class BadTextBoss : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] private TextMeshPro _BossText;
     void Start()
     {
-        
+        int randomIndex = Random.Range(0, 3);
+        RandomText(randomIndex);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void RandomText(int randomIndex)
     {
-        
+        switch (randomIndex)
+        {
+            case 0:
+                _BossText.text = "Drink alcohol";
+                break;
+                case 1:
+                _BossText.text = "Play Dota2";
+                break;
+                case 2:
+                _BossText.text = "Play CS";
+                break;
+        }
+
     }
+    
 }

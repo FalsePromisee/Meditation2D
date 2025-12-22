@@ -53,6 +53,7 @@ public class UI : MonoBehaviour
         if (_health >= _maxHealth)
         {
             _health = _maxHealth;
+            _healthText.text = "Health: " + _health;
         }
     }
 }
