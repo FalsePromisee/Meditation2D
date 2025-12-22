@@ -10,6 +10,7 @@ namespace _Core.Scripts.Managers
         public static event Action OnPlayerDied;
         public static event Action OnGamePaused;
         public static event Action OnGameUnpaused;
+        public static event Action<int, int> OnGoodObjectCollected;
 
         public static event Action<int> OnBadThoughtKilled;
 
@@ -31,6 +32,11 @@ namespace _Core.Scripts.Managers
         public void OnBadThoughtKill(int pointsAmount)
         {
             OnBadThoughtKilled?.Invoke(pointsAmount);
+        }
+
+        public void OnGoodObjectCollect(int health, int pointsAmount)
+        {
+            OnGoodObjectCollected?.Invoke(health, pointsAmount);
         }
 
         public void OnGamePause()

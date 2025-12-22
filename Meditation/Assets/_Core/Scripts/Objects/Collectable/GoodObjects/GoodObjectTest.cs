@@ -1,4 +1,7 @@
+using System;
 using UnityEngine;
+using _Core.Scripts.Interfaces;
+using Random = UnityEngine.Random;
 
 namespace _Core.Scripts.Objects.Collectable.GoodObjects
 {
@@ -7,12 +10,19 @@ namespace _Core.Scripts.Objects.Collectable.GoodObjects
         [SerializeField] private float _moveSpeed;
 
         private Rigidbody2D _rigidbody;
+        private CapsuleCollider2D _collider;
         private TestDirectionObjects[] _objectVelocityDirection;
+        
+        private Vector3 _startDragPos;
         private Vector3 _objectDirection;
+
+        public int additionalPoints { get; private set; } = 25;
+        public int additionalHealth { get; private set; } = 1;
 
         private void Start()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
+            _collider = GetComponent<CapsuleCollider2D>();
             _objectVelocityDirection = FindObjectsByType<TestDirectionObjects>(FindObjectsSortMode.None);
             int randomValue = Random.Range(0, _objectVelocityDirection.Length);
             _objectDirection = (_objectVelocityDirection[randomValue].transform.position - transform.position).normalized;
@@ -22,6 +32,40 @@ namespace _Core.Scripts.Objects.Collectable.GoodObjects
         private void Move()
         {
             _rigidbody.linearVelocity = _objectDirection * _moveSpeed;
+        }
+
+        private void OnMouseDown()
+        {
+            _startDragPos = transform.position;
+            transform.position = GetMousePosInWorld();
+        }
+
+        private void OnMouseDrag()
+        {
+            transform.position = GetMousePosInWorld();
+        }
+
+        private void OnMouseUp()
+        {
+            _collider.enabled = false;
+            Collider2D hitCollider = Physics2D.OverlapPoint(transform.position);
+            _collider.enabled = true;
+            if (hitCollider != null && hitCollider.TryGetComponent(out IGoodObjectDrop playerPosition))
+            {
+                playerPosition.OnGoodObjectDrop(this);
+                Destroy(gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
+
+        private Vector3 GetMousePosInWorld()
+        {
+            Vector3 mousePosition =  Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousePosition.z = 0;
+            return mousePosition;
         }
     }
 }

@@ -1,9 +1,11 @@
+using _Core.Scripts.Interfaces;
 using _Core.Scripts.Managers;
+using _Core.Scripts.Objects.Collectable.GoodObjects;
 using UnityEngine;
 
 namespace _Core.Scripts.Player
 {
-    public class PlayerStats : MonoBehaviour
+    public class PlayerStats : MonoBehaviour, IGoodObjectDrop
     {
         private int _maxHealth = 10;
         public int _currentHealth { get; private set; }
@@ -11,6 +13,15 @@ namespace _Core.Scripts.Player
         private void Awake()
         {
             _currentHealth = _maxHealth;
+        }
+
+        private void RestoreHealth()
+        {
+            _currentHealth++;
+            if (_currentHealth > _maxHealth)
+            {
+                _currentHealth = _maxHealth;
+            };
         }
 
 
@@ -24,6 +35,13 @@ namespace _Core.Scripts.Player
                 Debug.Log("Player dead (Player stats log)");
                 EventManager.Instance.OnPlayerDeath();
             }
+        }
+
+        public void OnGoodObjectDrop(GoodObjectTest goodThought)
+        {
+            goodThought.transform.position = transform.position;
+            RestoreHealth();
+            EventManager.Instance.OnGoodObjectCollect(goodThought.additionalHealth, goodThought.additionalPoints);
         }
     }
 }
