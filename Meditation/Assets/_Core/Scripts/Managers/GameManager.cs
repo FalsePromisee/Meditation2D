@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace _Core.Scripts.Managers
 {
@@ -8,11 +9,14 @@ namespace _Core.Scripts.Managers
 
         [SerializeField] private GameObject _pauseMenu;
         [SerializeField] private GameObject _pauseButton;
+        [SerializeField] private GameObject _gameOverMenu;
         
         private void Awake()
         {
+            Time.timeScale = 1;
             Instance = this;
             _pauseMenu.SetActive(false);
+            _gameOverMenu.SetActive(false);
         }
 
         public void StopGame()
@@ -30,15 +34,36 @@ namespace _Core.Scripts.Managers
             EventManager.Instance.OnGameUnpause();
             Time.timeScale = 1;
         }
+
+        public void ReturnToMenu()
+        {
+            Time.timeScale = 1;
+            SceneManager.LoadScene(0);
+        }
+
+        public void RestartGame()
+        {
+            Time.timeScale = 1;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
         
         private void OnEnable()
         {
             EventManager.OnPlayerDied += PlayerDead;
         }
 
+        private void OnDisable()
+        {
+            EventManager.OnPlayerDied -= PlayerDead;
+        }
+
         private void PlayerDead()
         {
+            Time.timeScale = 0;
+            _pauseButton.SetActive(false);
+            _gameOverMenu.SetActive(true);
             Debug.Log("Player Dead (game manager log)");
         }
+        
     }
 }
