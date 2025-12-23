@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2151f8562184e56a79559e7a77da796, type: 3}
+  m_Name: FastThoughtData
+  m_EditorClassIdentifier: Assembly-CSharp::_Core.Scripts.ScriptableObjects.Texts.ThoughtsTextData
+  thoughtTextOne: Drink cola
+  thoughtTextTwo: Eat unhealthy
+  thoughtTextThree: Play all night

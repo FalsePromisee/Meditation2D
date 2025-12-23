@@ -286,6 +286,7 @@ GameObject:
   - component: {fileID: 318411195126205793}
   - component: {fileID: 5209570906580340392}
   - component: {fileID: -1950436579724577654}
+  - component: {fileID: -5907869111891593597}
   m_Layer: 7
   m_Name: Good thought
   m_TagString: Untagged
@@ -393,9 +394,24 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4269918322639511253}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f80a309cfb46245c6b69872e49c540ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GoodThougthText
-  _goodThoughtText: {fileID: 4318362475228237246}
+  _thoughtText: {fileID: 0}
+  _thoughtTextData: {fileID: 0}
+--- !u!114 &-5907869111891593597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4269918322639511253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5759a967adc6141c09af604e2597cb6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_Core.Scripts.Objects.Collectable.Text_for_objects.FastAndDefaultThoughtText
+  _thoughtText: {fileID: 4318362475228237246}
+  _thoughtTextData: {fileID: 11400000, guid: e225ee5e279a841feb971da308c65b1b, type: 2}

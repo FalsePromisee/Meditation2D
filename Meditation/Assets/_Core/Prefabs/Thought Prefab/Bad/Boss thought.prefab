@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2226551527832461670}
   - component: {fileID: 4622104550337318721}
   - component: {fileID: -1015562772136024864}
+  - component: {fileID: 3383144420321046685}
   m_Layer: 6
   m_Name: Boss thought
   m_TagString: Untagged
@@ -120,12 +121,27 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2680417525637081045}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db7dda78cd5ed2f479ad736e13e83cb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BadTextBoss
-  _BossText: {fileID: 5501742967225310792}
+  _thoughtText: {fileID: 5501742967225310792}
+  _thoughtTextData: {fileID: 11400000, guid: 705487b9e2d0c4eccb8f5fed77fe5d3a, type: 2}
+--- !u!114 &3383144420321046685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2680417525637081045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5759a967adc6141c09af604e2597cb6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_Core.Scripts.Objects.Collectable.Text_for_objects.FastAndDefaultThoughtText
+  _thoughtText: {fileID: 5501742967225310792}
+  _thoughtTextData: {fileID: 11400000, guid: 705487b9e2d0c4eccb8f5fed77fe5d3a, type: 2}
 --- !u!1 &2852217502223663119
 GameObject:
   m_ObjectHideFlags: 0
