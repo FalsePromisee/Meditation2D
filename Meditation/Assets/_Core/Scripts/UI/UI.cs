@@ -30,6 +30,7 @@ public class UI : MonoBehaviour
     {
         EventManager.OnBadThoughtKilled -= BadThoughtKill;
         EventManager.OnPlayerTookDamage -= PlayerTookDamage;
+        EventManager.OnGoodObjectCollected -= GoodObjectCollected;
     }
 
     //event's methods

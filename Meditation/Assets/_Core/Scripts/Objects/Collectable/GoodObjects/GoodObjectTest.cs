@@ -4,7 +4,7 @@ using Random = UnityEngine.Random;
 
 namespace _Core.Scripts.Objects.Collectable.GoodObjects
 {
-    public class GoodObjectTest : MonoBehaviour
+    public class GoodObjectTest : MonoBehaviour, IMovable
     {
         [SerializeField] private float _moveSpeed;
 
@@ -17,6 +17,7 @@ namespace _Core.Scripts.Objects.Collectable.GoodObjects
 
         public int additionalPoints { get; private set; } = 25;
         public int additionalHealth { get; private set; } = 1;
+        public int damage {  get; private set; } = 2;  //Amount of damage that object deals if object fly away and player didn't try to catch it
 
         private void Start()
         {
@@ -28,7 +29,7 @@ namespace _Core.Scripts.Objects.Collectable.GoodObjects
             Move();
         }
 
-        private void Move()
+        public void Move()
         {
             _rigidbody.linearVelocity = _objectDirection * _moveSpeed;
         }
@@ -66,5 +67,7 @@ namespace _Core.Scripts.Objects.Collectable.GoodObjects
             mousePosition.z = 0;
             return mousePosition;
         }
+
+        
     }
 }
