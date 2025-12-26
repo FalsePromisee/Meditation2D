@@ -7,6 +7,8 @@ namespace _Core.Scripts.Objects.Collectable.GoodObjects
     public class GoodObjectTest : MonoBehaviour, IMovable
     {
         [SerializeField] private float _moveSpeed;
+        [SerializeField] private ParticleSystem _goodExplosionParticle;
+        [SerializeField] private ParticleSystem _badExplosionParticle;
 
         private Rigidbody2D _rigidbody;
         private CapsuleCollider2D _collider;
@@ -53,10 +55,12 @@ namespace _Core.Scripts.Objects.Collectable.GoodObjects
             if (hitCollider != null && hitCollider.TryGetComponent(out IGoodObjectDrop playerPosition))
             {
                 playerPosition.OnGoodObjectDrop(this);
+                Explode();
                 Destroy(gameObject);
             }
             else
             {
+                BadExplode();
                 Destroy(gameObject);
             }
         }
@@ -68,6 +72,16 @@ namespace _Core.Scripts.Objects.Collectable.GoodObjects
             return mousePosition;
         }
 
+        private void Explode()
+        {
+            ParticleSystem particle = Instantiate(_goodExplosionParticle, transform.position, Quaternion.identity);
+            particle.Play();
+        }
+        private void BadExplode()
+        {
+            ParticleSystem badParticle = Instantiate(_badExplosionParticle, transform.position, Quaternion.identity);
+            badParticle.Play();
+        }
         
     }
 }

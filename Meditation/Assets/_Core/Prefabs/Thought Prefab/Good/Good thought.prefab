@@ -322,6 +322,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_Core.Scripts.Objects.Collectable.GoodObjects.GoodObjectTest
   _moveSpeed: 2
+  _goodExplosionParticle: {fileID: 6210886654842119289, guid: 49ed04566c2f3974f9aeae769f96878a, type: 3}
+  _badExplosionParticle: {fileID: 6210886654842119289, guid: 726e40fb5238543a4830744cf5a4dd17, type: 3}
 --- !u!50 &318411195126205793
 Rigidbody2D:
   serializedVersion: 5

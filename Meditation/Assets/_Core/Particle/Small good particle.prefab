@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6210886654842119289}
   - component: {fileID: 51696534796501553}
   m_Layer: 6
-  m_Name: Small explodion particle
+  m_Name: Small good particle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41,7 +41,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1690112405197965297}
   serializedVersion: 8
-  lengthInSec: 0.25
+  lengthInSec: 1.1
   simulationSpeed: 1
   stopAction: 2
   cullingMode: 0
@@ -116,8 +116,8 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.25
-      minScalar: 0.15
+      scalar: 0.55
+      minScalar: 0.35
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -169,8 +169,8 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 25
-      minScalar: 20
+      scalar: 7
+      minScalar: 3
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -222,8 +222,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0.99215686, g: 0.5783665, b: 0.07058824, a: 1}
-      maxColor: {r: 0.8784314, g: 0.19815113, b: 0.06274507, a: 1}
+      minColor: {r: 0.4393064, g: 0.99215686, b: 0.07058824, a: 1}
+      maxColor: {r: 0.24895217, g: 0.9433962, b: 0.031149892, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -287,8 +287,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.3
-      minScalar: 0.05
+      scalar: 0.25
+      minScalar: 0.04
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -664,7 +664,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 0
+    type: 12
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
@@ -980,7 +980,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 80
+        scalar: 35
         minScalar: 30
         maxCurve:
           serializedVersion: 2
