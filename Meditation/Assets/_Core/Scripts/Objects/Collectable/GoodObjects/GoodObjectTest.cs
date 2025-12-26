@@ -1,6 +1,7 @@
 using UnityEngine;
 using _Core.Scripts.Interfaces;
 using Random = UnityEngine.Random;
+using _Core.Scripts.Managers;
 
 namespace _Core.Scripts.Objects.Collectable.GoodObjects
 {
@@ -60,6 +61,7 @@ namespace _Core.Scripts.Objects.Collectable.GoodObjects
             }
             else
             {
+                EventManager.Instance.OnPlayerTakeDamage(damage);
                 BadExplode();
                 Destroy(gameObject);
             }
