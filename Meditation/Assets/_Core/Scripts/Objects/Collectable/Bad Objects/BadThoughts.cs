@@ -1,3 +1,4 @@
+using System;
 using _Core.Scripts.Interfaces;
 using _Core.Scripts.Player;
 using _Core.Scripts.Managers;
@@ -8,6 +9,7 @@ namespace _Core.Scripts.Objects.Collectable.Bad_Objects
     public class BadThoughts : MonoBehaviour, IMovable, IBadThoughts
     {
         [SerializeField] private BadThougthsScriptableObject badThoughtsData;
+        [SerializeField] private ParticleSystem _explosionEffect;
         
         private PlayerStats _playerTransform;
         private Rigidbody2D _rigidbody;
@@ -23,6 +25,7 @@ namespace _Core.Scripts.Objects.Collectable.Bad_Objects
             _objectVelocityDirection = (_playerTransform.transform.position - transform.position ).normalized;
             Move();
         }
+        
 
         private void OnTriggerEnter2D(Collider2D other)
         {
@@ -45,9 +48,17 @@ namespace _Core.Scripts.Objects.Collectable.Bad_Objects
             _currentHealth--;
             if (_currentHealth <= 0)
             {
+                Explode();
                 Destroy(this.gameObject);
                 EventManager.Instance.OnBadThoughtKill(badThoughtsData.pointsAmount);
             }
+        }
+
+        private void Explode()
+        {
+            ParticleSystem _particleTest = Instantiate(_explosionEffect, transform.position, Quaternion.identity);
+                _particleTest.Play();
+             
         }
     }
 }

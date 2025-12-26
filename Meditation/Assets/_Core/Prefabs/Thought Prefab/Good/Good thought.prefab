@@ -285,7 +285,6 @@ GameObject:
   - component: {fileID: 5054329272723177750}
   - component: {fileID: 318411195126205793}
   - component: {fileID: 5209570906580340392}
-  - component: {fileID: -1950436579724577654}
   - component: {fileID: -5907869111891593597}
   m_Layer: 7
   m_Name: Good thought
@@ -387,20 +386,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0.020146431, y: -0.0000000024016416}
   m_Size: {x: 1.859867, y: 1.000008}
   m_Direction: 1
---- !u!114 &-1950436579724577654
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4269918322639511253}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f80a309cfb46245c6b69872e49c540ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GoodThougthText
-  _thoughtText: {fileID: 0}
-  _thoughtTextData: {fileID: 0}
 --- !u!114 &-5907869111891593597
 MonoBehaviour:
   m_ObjectHideFlags: 0

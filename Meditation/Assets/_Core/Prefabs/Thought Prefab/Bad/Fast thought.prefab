@@ -386,6 +386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_Core.Scripts.Objects.Collectable.Bad_Objects.BadThoughts
   badThoughtsData: {fileID: 11400000, guid: 89cc3fb40547b492bb0b713976982639, type: 2}
+  _explosionEffect: {fileID: 6210886654842119289, guid: 726e40fb5238543a4830744cf5a4dd17, type: 3}
 --- !u!114 &458912463198071225
 MonoBehaviour:
   m_ObjectHideFlags: 0

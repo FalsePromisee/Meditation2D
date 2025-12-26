@@ -141,6 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_Core.Scripts.Objects.Collectable.Bad_Objects.BadThoughts
   badThoughtsData: {fileID: 11400000, guid: ad9bf5afaeb8b48e184f40368f68ba1e, type: 2}
+  _explosionEffect: {fileID: 6210886654842119289, guid: 726e40fb5238543a4830744cf5a4dd17, type: 3}
 --- !u!70 &3261541822354838588
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
