@@ -6854,8 +6854,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93ee59a3f3578459fa1dfba67b1b09ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_Core.Scripts.Player.MouseController
-  _mouseMinVelocity: 0.2
+  _mouseMinVelocity: 0.1
   _spriteRenderer: {fileID: 1639607482}
+  _holdSprite: {fileID: -8943458417565438243, guid: c8faf9c444620ce46a3d6c8eb1b31c67, type: 3}
+  _reflectSprite: {fileID: 2184286662323053076, guid: c8faf9c444620ce46a3d6c8eb1b31c67, type: 3}
+  _idleSprite: {fileID: -5772639866357648856, guid: c8faf9c444620ce46a3d6c8eb1b31c67, type: 3}
 --- !u!212 &1639607482
 SpriteRenderer:
   serializedVersion: 2
@@ -6905,8 +6908,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 15
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0.0047169924, b: 0.0047169924, a: 1}
+  m_Sprite: {fileID: 2184286662323053076, guid: c8faf9c444620ce46a3d6c8eb1b31c67, type: 3}
+  m_Color: {r: 0.35569108, g: 1, b: 0.0039215684, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -6925,8 +6928,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

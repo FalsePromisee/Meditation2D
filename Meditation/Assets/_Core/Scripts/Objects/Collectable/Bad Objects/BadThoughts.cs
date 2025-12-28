@@ -31,8 +31,6 @@ namespace _Core.Scripts.Objects.Collectable.Bad_Objects
         {
             if (other.GetComponent<PlayerStats>())
             {
-                //PlayerStats playerStats = other.GetComponent<PlayerStats>();
-                //playerStats.TakeDamage(badThoughtsData.damageAmount);
                 EventManager.Instance.OnPlayerTakeDamage(badThoughtsData.damageAmount);
                 Destroy(gameObject);
             }

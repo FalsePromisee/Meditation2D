@@ -42,11 +42,13 @@ namespace _Core.Scripts.Objects.Collectable.GoodObjects
         {
             _startDragPos = transform.position;
             transform.position = GetMousePosInWorld();
+            EventManager.Instance.OnMouseHold();
         }
 
         private void OnMouseDrag()
         {
             transform.position = GetMousePosInWorld();
+            EventManager.Instance.OnMouseHold();
         }
 
         private void OnMouseUp()
@@ -54,6 +56,7 @@ namespace _Core.Scripts.Objects.Collectable.GoodObjects
             _collider.enabled = false;
             Collider2D hitCollider = Physics2D.OverlapPoint(transform.position);
             _collider.enabled = true;
+            EventManager.Instance.OnMouseIdle();
             if (hitCollider != null && hitCollider.TryGetComponent(out IGoodObjectDrop playerPosition))
             {
                 playerPosition.OnGoodObjectDrop(this);

@@ -1,5 +1,6 @@
 using _Core.Scripts.Interfaces;
 using _Core.Scripts.Managers;
+using System;
 using UnityEngine;
 
 namespace _Core.Scripts.Player
@@ -8,6 +9,9 @@ namespace _Core.Scripts.Player
     {
         [SerializeField] private float _mouseMinVelocity = 0.1f;
         [SerializeField] private SpriteRenderer _spriteRenderer;
+        [SerializeField] private Sprite _holdSprite;
+        [SerializeField] private Sprite _reflectSprite;
+        [SerializeField] private Sprite _idleSprite;
         public Vector3 mouseDirection{get; private set;}
         private Vector3 _newMousePosition;
         
@@ -21,7 +25,7 @@ namespace _Core.Scripts.Player
         {
             _camera = Camera.main;
             _mouseCollider = GetComponent<CircleCollider2D>();
-            _spriteRenderer.enabled = false;
+            //_spriteRenderer.enabled = false;
         }
         private void Update()
         {
@@ -40,6 +44,7 @@ namespace _Core.Scripts.Player
             if(Input.GetMouseButtonUp(0))
             {
                 StopReflectObjects();
+                EventManager.Instance.OnMouseIdle();
             }
             if(_isMousePressed)
             {
@@ -55,13 +60,21 @@ namespace _Core.Scripts.Player
             _isMousePressed = true;
             _mouseCollider.enabled = true;
             _spriteRenderer.enabled = true;
+            EventManager.Instance.OnMouseRelese();
         }
 
         private void StopReflectObjects() // player release button
         {
             _isMousePressed = false;
             _mouseCollider.enabled = false;
-            _spriteRenderer.enabled = false;
+            _newMousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
+            _newMousePosition.z = 0;
+            mouseDirection = _newMousePosition - transform.position;
+            var velocity = mouseDirection.magnitude / Time.deltaTime;
+            _mouseCollider.enabled = velocity > _mouseMinVelocity;
+
+            transform.position = _newMousePosition;
+            //_spriteRenderer.enabled = false;
         }
 
         private void ContinueReflectingObjects() // player pressed and holding button
@@ -91,6 +104,34 @@ namespace _Core.Scripts.Player
             StopReflectObjects();
             EventManager.OnGamePaused += GamePause;
             EventManager.OnGameUnpaused += GameUnpause;
+            EventManager.OnMouseRelesed += MouseRelesed;
+            EventManager.OnMouseHolded += MouseHold;
+            EventManager.OnMouseIdled += MouseIdle;
+        }
+
+        
+
+        private void OnDisable()
+        {
+            StopReflectObjects();
+            EventManager.OnGamePaused -= GamePause;
+            EventManager.OnGameUnpaused -= GameUnpause;
+            EventManager.OnMouseRelesed -= MouseRelesed;
+            EventManager.OnMouseHolded -= MouseHold;
+        }
+
+        private void MouseHold()
+        {
+            _spriteRenderer.sprite = _holdSprite;
+        }
+
+        private void MouseRelesed()
+        {
+            _spriteRenderer.sprite = _reflectSprite;
+        }
+        private void MouseIdle()
+        {
+            _spriteRenderer.sprite = _idleSprite;
         }
 
         private void GameUnpause()
@@ -103,9 +144,6 @@ namespace _Core.Scripts.Player
             _isGamePaused = true;
         }
 
-        private void OnDisable()
-        {
-            StopReflectObjects();
-        }
+        
     }
 }

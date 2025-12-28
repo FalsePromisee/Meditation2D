@@ -17,6 +17,7 @@ namespace _Core.Scripts.Managers
             Instance = this;
             _pauseMenu.SetActive(false);
             _gameOverMenu.SetActive(false);
+            Cursor.visible = false;
         }
 
         public void StopGame()
@@ -25,6 +26,7 @@ namespace _Core.Scripts.Managers
             _pauseButton.SetActive(false);
             EventManager.Instance.OnGamePause();
             Time.timeScale = 0;
+            Cursor.visible = true;
         }
 
         public void ResumeGame()
@@ -33,6 +35,7 @@ namespace _Core.Scripts.Managers
             _pauseButton.SetActive(true);
             EventManager.Instance.OnGameUnpause();
             Time.timeScale = 1;
+            Cursor.visible = false;
         }
 
         public void ReturnToMenu()
@@ -45,6 +48,7 @@ namespace _Core.Scripts.Managers
         {
             Time.timeScale = 1;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            Cursor.visible = false;
         }
         
         private void OnEnable()

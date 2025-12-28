@@ -14,6 +14,10 @@ namespace _Core.Scripts.Managers
 
         public static event Action<int> OnBadThoughtKilled;
 
+        public static event Action OnMouseRelesed;
+        public static event Action OnMouseHolded;
+        public static event Action OnMouseIdled;
+
         private void Awake()
         {
             Instance = this;
@@ -47,6 +51,20 @@ namespace _Core.Scripts.Managers
         public void OnGameUnpause()
         {
             OnGameUnpaused?.Invoke();
+        }
+
+        public void OnMouseRelese()
+        {
+            OnMouseRelesed?.Invoke();
+        }
+
+        public void OnMouseHold()
+        {
+            OnMouseHolded?.Invoke();
+        }
+        public void OnMouseIdle()
+        {
+            OnMouseIdled?.Invoke();
         }
     }
 }
