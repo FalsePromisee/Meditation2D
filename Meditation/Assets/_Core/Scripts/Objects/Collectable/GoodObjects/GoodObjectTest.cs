@@ -2,6 +2,7 @@ using UnityEngine;
 using _Core.Scripts.Interfaces;
 using Random = UnityEngine.Random;
 using _Core.Scripts.Managers;
+using _Core.Scripts.Player;
 
 namespace _Core.Scripts.Objects.Collectable.GoodObjects
 {
@@ -56,7 +57,7 @@ namespace _Core.Scripts.Objects.Collectable.GoodObjects
             if (hitCollider != null && hitCollider.TryGetComponent(out IGoodObjectDrop playerPosition))
             {
                 playerPosition.OnGoodObjectDrop(this);
-                Explode();
+                GoodExplode();
                 Destroy(gameObject);
             }
             else
@@ -74,7 +75,7 @@ namespace _Core.Scripts.Objects.Collectable.GoodObjects
             return mousePosition;
         }
 
-        private void Explode()
+        private void GoodExplode()
         {
             ParticleSystem particle = Instantiate(_goodExplosionParticle, transform.position, Quaternion.identity);
             particle.Play();

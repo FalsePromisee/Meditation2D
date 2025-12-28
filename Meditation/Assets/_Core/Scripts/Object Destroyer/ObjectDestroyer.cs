@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class ObjectDestroyer : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.GetComponent<GoodObjectTest>() != null)
+        if (collision.collider.GetComponent<GoodObjectTest>() != null)
         {
-            GoodObjectTest goodObject = collision.GetComponent<GoodObjectTest>();
+            GoodObjectTest goodObject = collision.collider.GetComponent<GoodObjectTest>();
             EventManager.Instance.OnPlayerTakeDamage(goodObject.damage);
             Destroy(collision.gameObject);
         }
     }
+   
 }

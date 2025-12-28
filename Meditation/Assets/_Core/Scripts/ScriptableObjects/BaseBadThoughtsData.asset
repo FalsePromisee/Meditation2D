@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: BaseBadThoughtsData
   m_EditorClassIdentifier: Assembly-CSharp::BadThougthsScriptableObject
   speed: 1
-  health: 1
+  health: 7
   damageAmount: 2
   pointsAmount: 3
