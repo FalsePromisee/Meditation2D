@@ -67,13 +67,6 @@ namespace _Core.Scripts.Player
         {
             _isMousePressed = false;
             _mouseCollider.enabled = false;
-            _newMousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
-            _newMousePosition.z = 0;
-            mouseDirection = _newMousePosition - transform.position;
-            var velocity = mouseDirection.magnitude / Time.deltaTime;
-            _mouseCollider.enabled = velocity > _mouseMinVelocity;
-
-            transform.position = _newMousePosition;
             //_spriteRenderer.enabled = false;
         }
 
