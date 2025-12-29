@@ -144,12 +144,12 @@ TextureImporter:
       name: Hands sprite cut_0
       rect:
         serializedVersion: 2
-        x: 141
-        y: 385
-        width: 227
-        height: 199
+        x: 140
+        y: 384
+        width: 229
+        height: 201
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -166,12 +166,12 @@ TextureImporter:
       name: Hands sprite cut_1
       rect:
         serializedVersion: 2
-        x: 410
-        y: 371
-        width: 198
-        height: 227
+        x: 409
+        y: 370
+        width: 200
+        height: 229
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -188,12 +188,12 @@ TextureImporter:
       name: Hands sprite cut_2
       rect:
         serializedVersion: 2
-        x: 679
-        y: 371
-        width: 198
-        height: 241
+        x: 678
+        y: 370
+        width: 200
+        height: 243
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -210,12 +210,12 @@ TextureImporter:
       name: Hands sprite cut_3
       rect:
         serializedVersion: 2
-        x: 141
-        y: 87
-        width: 170
-        height: 199
+        x: 140
+        y: 86
+        width: 172
+        height: 201
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -232,12 +232,12 @@ TextureImporter:
       name: Hands sprite cut_4
       rect:
         serializedVersion: 2
-        x: 438
-        y: 102
-        width: 170
-        height: 198
+        x: 437
+        y: 101
+        width: 172
+        height: 200
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -254,12 +254,12 @@ TextureImporter:
       name: Hands sprite cut_5
       rect:
         serializedVersion: 2
-        x: 735
-        y: 102
-        width: 142
-        height: 170
+        x: 734
+        y: 101
+        width: 144
+        height: 172
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -276,7 +276,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 2978da7b3b404214fb9ca9de6d63767c
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -284,9 +284,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
       Hands sprite cut_0: 1267261525212714364
       Hands sprite cut_1: -5772639866357648856

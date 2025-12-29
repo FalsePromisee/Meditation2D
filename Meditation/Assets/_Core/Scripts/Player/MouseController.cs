@@ -12,6 +12,8 @@ namespace _Core.Scripts.Player
         [SerializeField] private Sprite _holdSprite;
         [SerializeField] private Sprite _reflectSprite;
         [SerializeField] private Sprite _idleSprite;
+
+
         public Vector3 mouseDirection{get; private set;}
         private Vector3 _newMousePosition;
         
@@ -21,17 +23,23 @@ namespace _Core.Scripts.Player
         private bool _isMousePressed;
         private bool _isGamePaused = false;
 
+        private bool _isGoodObjectHold = false;
+
         private void Awake()
         {
             _camera = Camera.main;
             _mouseCollider = GetComponent<CircleCollider2D>();
-            //_spriteRenderer.enabled = false;
         }
+
+
         private void Update()
         {
+
             if (!_isGamePaused)
             {
                 InputHandler();
+
+                MouseSpriteFollow();
             }
         }
 
@@ -67,6 +75,8 @@ namespace _Core.Scripts.Player
         {
             _isMousePressed = false;
             _mouseCollider.enabled = false;
+
+
             //_spriteRenderer.enabled = false;
         }
 
@@ -77,7 +87,7 @@ namespace _Core.Scripts.Player
             mouseDirection = _newMousePosition - transform.position;
             var velocity = mouseDirection.magnitude / Time.deltaTime;
             _mouseCollider.enabled = velocity > _mouseMinVelocity;
-            
+
             transform.position = _newMousePosition;
         }
 
@@ -85,11 +95,19 @@ namespace _Core.Scripts.Player
         //checking if mouse is touching bad thought's objects
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.gameObject.GetComponent<IBadThoughts>() != null && _isMousePressed)
+            if (collision.gameObject.GetComponent<IBadThoughts>() != null && _isMousePressed && !_isGoodObjectHold)
             {
                 IBadThoughts badThoughts = collision.gameObject.GetComponent<IBadThoughts>();
                 badThoughts.TakeDamage();
             }
+        }
+
+
+        private void MouseSpriteFollow()
+        {
+            _newMousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
+            _newMousePosition.z = 0;
+            transform.position = _newMousePosition;
         }
 
         private void OnEnable() //refresh mouse before start
@@ -102,7 +120,6 @@ namespace _Core.Scripts.Player
             EventManager.OnMouseIdled += MouseIdle;
         }
 
-        
 
         private void OnDisable()
         {
@@ -111,20 +128,28 @@ namespace _Core.Scripts.Player
             EventManager.OnGameUnpaused -= GameUnpause;
             EventManager.OnMouseRelesed -= MouseRelesed;
             EventManager.OnMouseHolded -= MouseHold;
+            EventManager.OnMouseIdled -= MouseIdle;
         }
 
         private void MouseHold()
         {
             _spriteRenderer.sprite = _holdSprite;
+            _isGoodObjectHold = true;
         }
 
         private void MouseRelesed()
         {
-            _spriteRenderer.sprite = _reflectSprite;
+            if (!_isGoodObjectHold)
+            {
+                _spriteRenderer.sprite = _reflectSprite;
+            }
+            
+            
         }
         private void MouseIdle()
         {
             _spriteRenderer.sprite = _idleSprite;
+            _isGoodObjectHold = false;
         }
 
         private void GameUnpause()

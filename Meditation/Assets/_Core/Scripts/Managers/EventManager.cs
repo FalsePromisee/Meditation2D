@@ -6,10 +6,13 @@ namespace _Core.Scripts.Managers
     public class EventManager : MonoBehaviour
     {
         public static EventManager Instance;
+
         public static event Action<int> OnPlayerTookDamage;
         public static event Action OnPlayerDied;
+
         public static event Action OnGamePaused;
         public static event Action OnGameUnpaused;
+
         public static event Action<int, int> OnGoodObjectCollected;
 
         public static event Action<int> OnBadThoughtKilled;
@@ -17,6 +20,9 @@ namespace _Core.Scripts.Managers
         public static event Action OnMouseRelesed;
         public static event Action OnMouseHolded;
         public static event Action OnMouseIdled;
+
+        public static event Action OnPlayerTookGoodOjbect;
+        public static event Action OnPlayerReleasedGoodObject;
 
         private void Awake()
         {
@@ -65,6 +71,15 @@ namespace _Core.Scripts.Managers
         public void OnMouseIdle()
         {
             OnMouseIdled?.Invoke();
+        }
+
+        public void OnPlayerTakeGoodObject()
+        {
+            OnPlayerTookGoodOjbect?.Invoke();
+        }
+        public void OnPlayerReleaseGoodObject()
+        {
+            OnPlayerReleasedGoodObject?.Invoke();
         }
     }
 }

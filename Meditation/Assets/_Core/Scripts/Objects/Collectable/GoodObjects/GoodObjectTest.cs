@@ -48,7 +48,6 @@ namespace _Core.Scripts.Objects.Collectable.GoodObjects
         private void OnMouseDrag()
         {
             transform.position = GetMousePosInWorld();
-            EventManager.Instance.OnMouseHold();
         }
 
         private void OnMouseUp()
