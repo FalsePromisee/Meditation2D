@@ -10,6 +10,8 @@ namespace _Core.Scripts.Managers
         [SerializeField] private GameObject _pauseMenu;
         [SerializeField] private GameObject _pauseButton;
         [SerializeField] private GameObject _gameOverMenu;
+
+        public float PlayerTimeAlive { get; private set; }
         
         private void Awake()
         {
@@ -18,6 +20,11 @@ namespace _Core.Scripts.Managers
             _pauseMenu.SetActive(false);
             _gameOverMenu.SetActive(false);
             Cursor.visible = false;
+        }
+
+        private void Update()
+        {
+            PlayerTimeAlive = Time.time;
         }
 
         public void StopGame()

@@ -9,16 +9,19 @@ namespace _Core.Scripts.Spawners
         [SerializeField] private SpawnerGoodObjects[] goodSpawners;
         
 
-        private float _minDelayBadObjects = 1.5f;
-        private float _maxDelayBadObjects = 3;
+        private float _minDelayBadObjects = 2f;
+        private float _maxDelayBadObjects = 4f;
         
-        private float _minDelayGoodObjects = 5f;
-        private float _maxDelayGoodObjects = 9f;
+        private float _minDelayGoodObjects = 7f;
+        private float _maxDelayGoodObjects = 10f;
+
 
         private void Start()
         {
             StartCoroutine(ActivateBadSpawners());
             StartCoroutine(ActivateGoodSpawners());
+            StartCoroutine(DecraseGoodSpawnTime());
+            StartCoroutine(DecraseBadSpawnTime());
         }
 
         private IEnumerator ActivateBadSpawners()
@@ -48,6 +51,41 @@ namespace _Core.Scripts.Spawners
                 randomSpawnerGoodObjects.SpawnGoodObject();
             }
         }
-        
+
+        private IEnumerator DecraseBadSpawnTime()
+        {
+            while (true)
+            {
+                if (_minDelayBadObjects >= 1.5f && _maxDelayBadObjects >= 3.5f)
+                {
+                    _minDelayBadObjects -= .05f;
+                    _maxDelayBadObjects -= .05f;
+                }
+                else
+                {
+                    StopCoroutine(DecraseBadSpawnTime());
+                }
+
+                yield return new WaitForSeconds(Random.Range(6,8));
+            }
+
+        }
+
+        private IEnumerator DecraseGoodSpawnTime()
+        {
+            while (true)
+            {
+                if (_minDelayGoodObjects >= 5 && _maxDelayGoodObjects >= 8)
+                {
+                    _minDelayGoodObjects -= 0.2f;
+                    _maxDelayGoodObjects -= 0.2f;
+                }
+                else
+                {
+                    StopCoroutine(DecraseGoodSpawnTime());
+                }
+                yield return new WaitForSeconds(Random.Range(7, 12));
+            }
+        }
     }
 }

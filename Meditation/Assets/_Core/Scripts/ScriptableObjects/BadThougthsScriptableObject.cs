@@ -7,4 +7,5 @@ public class BadThougthsScriptableObject : ScriptableObject
     public int health;
     public int damageAmount;
     public int pointsAmount;
+    public float timeMulriplier;
 }

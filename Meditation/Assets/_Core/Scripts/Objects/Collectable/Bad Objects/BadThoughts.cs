@@ -48,8 +48,11 @@ namespace _Core.Scripts.Objects.Collectable.Bad_Objects
             if (_currentHealth <= 0)
             {
                 Explode();
+                int pointsAmount = Mathf.RoundToInt(badThoughtsData.pointsAmount * (1 + GameManager.Instance.PlayerTimeAlive * badThoughtsData.timeMulriplier));
+                EventManager.Instance.OnBadThoughtKill(pointsAmount);
+                Debug.Log("Points from destroy: " + pointsAmount);
                 Destroy(this.gameObject);
-                EventManager.Instance.OnBadThoughtKill(badThoughtsData.pointsAmount);
+                
             }
         }
 
