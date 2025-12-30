@@ -4616,6 +4616,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UI
   _scoreText: {fileID: 1033393498}
   _healthText: {fileID: 1110822052}
+  _finalScoreText: {fileID: 910346853}
 --- !u!1 &869621421
 GameObject:
   m_ObjectHideFlags: 0

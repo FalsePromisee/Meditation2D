@@ -6,6 +6,8 @@ public class UI : MonoBehaviour
 {
     [SerializeField] private TMP_Text _scoreText;
     [SerializeField] private TMP_Text _healthText;
+    [SerializeField] private TMP_Text _finalScoreText;
+    
     private int _score;
     private int _maxHealth = 10;
     private int _health = 10;
@@ -22,15 +24,18 @@ public class UI : MonoBehaviour
         EventManager.OnBadThoughtKilled += BadThoughtKill;
         EventManager.OnPlayerTookDamage += PlayerTookDamage;
         EventManager.OnGoodObjectCollected += GoodObjectCollected;
+        EventManager.OnPlayerDied += GameOverScore;
     }
 
     
+
 
     private void OnDisable()
     {
         EventManager.OnBadThoughtKilled -= BadThoughtKill;
         EventManager.OnPlayerTookDamage -= PlayerTookDamage;
         EventManager.OnGoodObjectCollected -= GoodObjectCollected;
+        EventManager.OnPlayerDied -= GameOverScore;
     }
 
     //event's methods
@@ -56,5 +61,10 @@ public class UI : MonoBehaviour
             _health = _maxHealth;
             _healthText.text = "Health: " + _health;
         }
+    }
+    
+    private void GameOverScore()
+    {
+        _finalScoreText.text = "Final Score: " + _score;
     }
 }
