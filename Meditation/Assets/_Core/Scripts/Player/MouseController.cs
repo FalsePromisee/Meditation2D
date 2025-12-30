@@ -155,11 +155,13 @@ namespace _Core.Scripts.Player
         private void GameUnpause()
         {
             _isGamePaused = false;
+            _spriteRenderer.enabled = true;
         }
 
         private void GamePause()
         {
             _isGamePaused = true;
+            _spriteRenderer.enabled = false;
         }
 
         

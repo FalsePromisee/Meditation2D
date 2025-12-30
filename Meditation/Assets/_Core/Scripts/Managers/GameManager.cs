@@ -41,6 +41,7 @@ namespace _Core.Scripts.Managers
         public void ReturnToMenu()
         {
             Time.timeScale = 1;
+            Cursor.visible = true;
             SceneManager.LoadScene(0);
         }
 
@@ -66,6 +67,7 @@ namespace _Core.Scripts.Managers
             Time.timeScale = 0;
             _pauseButton.SetActive(false);
             _gameOverMenu.SetActive(true);
+            Cursor.visible = true;
             Debug.Log("Player Dead (game manager log)");
         }
         

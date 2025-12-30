@@ -50,25 +50,40 @@ namespace _Core.Scripts.Objects.Collectable.GoodObjects
             transform.position = GetMousePosInWorld();
         }
 
+        
         private void OnMouseUp()
         {
-            _collider.enabled = false;
-            Collider2D hitCollider = Physics2D.OverlapPoint(transform.position);
-            _collider.enabled = true;
-            EventManager.Instance.OnMouseIdle();
-            if (hitCollider != null && hitCollider.TryGetComponent(out IGoodObjectDrop playerPosition))
+            Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            var hits = Physics2D.OverlapPointAll(mouseWorldPos);
+            Collider2D target = null;
+
+            foreach (var hit in hits)
             {
-                playerPosition.OnGoodObjectDrop(this);
+                if (hit == _collider) continue;
+                if (hit.TryGetComponent<IGoodObjectDrop>(out _))
+                {
+                    target = hit;
+                    break;
+                }
+            }
+
+            EventManager.Instance.OnMouseIdle();
+
+            if (target != null &&
+                target.TryGetComponent(out IGoodObjectDrop dropZone))
+            {
+                dropZone.OnGoodObjectDrop(this);
                 GoodExplode();
-                Destroy(gameObject);
             }
             else
             {
                 EventManager.Instance.OnPlayerTakeDamage(damage);
                 BadExplode();
-                Destroy(gameObject);
             }
+
+            Destroy(gameObject);
         }
+
 
         private Vector3 GetMousePosInWorld()
         {
