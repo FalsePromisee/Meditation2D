@@ -10,12 +10,14 @@ namespace _Core.Scripts.Objects.Collectable.Bad_Objects
     {
         [SerializeField] private BadThougthsScriptableObject badThoughtsData;
         [SerializeField] private ParticleSystem _explosionEffect;
-        
+        [SerializeField] private HealthBar _healthBarUI;
+
         private PlayerStats _playerTransform;
         private Rigidbody2D _rigidbody;
         private Vector3 _objectVelocityDirection;
 
         private int _currentHealth;
+
         
         private void Start()
         {
@@ -45,12 +47,13 @@ namespace _Core.Scripts.Objects.Collectable.Bad_Objects
         public void TakeDamage()
         {
             _currentHealth--;
+            _healthBarUI.UpdateHealthBar(_currentHealth, badThoughtsData.health);
+            TextPopup.Create(transform.position, 1);
             if (_currentHealth <= 0)
             {
                 Explode();
                 int pointsAmount = Mathf.RoundToInt(badThoughtsData.pointsAmount * (1 + GameManager.Instance.PlayerTimeAlive * badThoughtsData.timeMulriplier));
                 EventManager.Instance.OnBadThoughtKill(pointsAmount);
-                Debug.Log("Points from destroy: " + pointsAmount);
                 Destroy(this.gameObject);
                 
             }

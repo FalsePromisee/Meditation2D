@@ -7,8 +7,8 @@ public class SpawnerBadObjects : MonoBehaviour
     [SerializeField] private GameObject _badBossThought;
 
 
-    private float _minBossSpawnTime = 3;
-    private float _maxBossSpawnTime = 7;
+    private float _minBossSpawnTime = 4f;
+    private float _maxBossSpawnTime = 9f;
     private float _timer;
 
     private void Start()
@@ -39,7 +39,7 @@ public class SpawnerBadObjects : MonoBehaviour
     {
         while (true)
         {
-            if (_minBossSpawnTime >= 2 && _maxBossSpawnTime >= 5)
+            if (_minBossSpawnTime >= 3 && _maxBossSpawnTime >= 7)
             {
                 _minBossSpawnTime -= 0.05f;
                 _maxBossSpawnTime -= 0.1f;
