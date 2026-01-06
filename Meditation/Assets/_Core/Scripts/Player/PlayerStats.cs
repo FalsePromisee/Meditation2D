@@ -31,7 +31,6 @@ namespace _Core.Scripts.Player
         public void TakeDamage(int damageAmount)
         {
             _currentHealth = _currentHealth - damageAmount;
-            Debug.Log("Health left" + _currentHealth);
             ExplodeParitcleOnTakeDamage();
             if (_currentHealth <= 0)
             {
